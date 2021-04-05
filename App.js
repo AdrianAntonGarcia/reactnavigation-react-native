@@ -16,11 +16,30 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Inicio">
+        <Stack.Navigator
+          initialRouteName="Inicio"
+          screenOptions={{
+            title: 'Componente Principal',
+            headerTitleAlign: 'center',
+            headerStyle: {backgroundColor: '#F4511E'},
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}>
+          {/* Estas configuraciones aplican solo al componente en las que lo ponemos, si queremos que aplique a todas hay que ponerlos en el stack.navigator */}
           <Stack.Screen
             name="Inicio"
             component={Inicio}
-            options={{title: 'Componente Principal'}}
+            options={{
+              title: 'Componente Principal',
+              headerTitleAlign: 'center',
+              headerStyle: {backgroundColor: '#F4511E'},
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            }}
           />
           {/* Headers dinámicos con la función flecha extraemos los props como si estuvieramos en el Componente */}
           <Stack.Screen
