@@ -17,8 +17,19 @@ const App = () => {
     <>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Inicio">
-          <Stack.Screen name="Inicio" component={Inicio} />
-          <Stack.Screen name="Nosotros" component={Nosotros} />
+          <Stack.Screen
+            name="Inicio"
+            component={Inicio}
+            options={{title: 'Componente Principal'}}
+          />
+          {/* Headers dinámicos con la función flecha extraemos los props como si estuvieramos en el Componente */}
+          <Stack.Screen
+            name="Nosotros"
+            component={Nosotros}
+            options={({route: {params}}) => ({
+              title: params.clienteId,
+            })}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
