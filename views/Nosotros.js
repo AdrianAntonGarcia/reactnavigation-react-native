@@ -1,7 +1,10 @@
+import {TabRouter} from '@react-navigation/routers';
 import React from 'react';
 import {Text, StyleSheet, View, Button} from 'react-native';
 
-export const Nosotros = ({navigation}) => {
+export const Nosotros = ({navigation, route: {params}}) => {
+  console.log(params);
+  const {clienteId} = params;
   const volver = () => {
     // navigation.navigate('Inicio');
     // navigation.push('Inicio');
@@ -9,7 +12,7 @@ export const Nosotros = ({navigation}) => {
   };
   return (
     <View style={styles.contenedor}>
-      <Text>Nosotros</Text>
+      <Text>{clienteId}</Text>
       <Button title="Volver" onPress={() => volver()} />
     </View>
   );

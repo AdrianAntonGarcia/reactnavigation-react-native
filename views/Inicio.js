@@ -2,8 +2,12 @@ import React from 'react';
 import {Text, StyleSheet, View, Button} from 'react-native';
 
 export const Inicio = ({navigation}) => {
+  const informacion = {
+    clienteId: 5000,
+    totalPagar: 500,
+  };
   const visitarNosotros = () => {
-    navigation.navigate('Nosotros');
+    navigation.navigate('Nosotros', informacion);
   };
   return (
     <View style={styles.contenedor}>
